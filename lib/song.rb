@@ -11,7 +11,7 @@ class Song
   end
 
   def self.find_by_name(name)
-    @@songs.detect{|a| a.name == name}
+    self.all.detect{|a| a.name == name}
   end
 
   def artist=(artist)
@@ -19,7 +19,7 @@ class Song
   end
 
   def self.reset_all
-    @@songs.clear
+    self.all.clear
   end
 
   def to_param

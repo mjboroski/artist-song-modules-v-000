@@ -20,15 +20,4 @@ class Song
     @artist = artist
   end
 
-##
-  def self.find_by_name(name)
-    self.all.detect{|a| a.name == name}
-  end
-
-
-##
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
-
 end

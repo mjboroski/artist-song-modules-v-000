@@ -15,6 +15,16 @@ class Artist
     @@artists
   end
 
+  def add_song(song)
+    @songs << song
+    song.artist = self
+  end
+
+  def add_songs(songs)
+    songs.each { |song| add_song(song) }
+  end
+
+##
   def self.find_by_name(name)
     self.all.detect{|a| a.name == name}
   end
@@ -26,16 +36,7 @@ class Artist
   def self.count
     self.all.count
   end
-
-  def add_song(song)
-    @songs << song
-    song.artist = self
-  end
-
-  def add_songs(songs)
-    songs.each { |song| add_song(song) }
-  end
-
+##
   def to_param
     name.downcase.gsub(' ', '-')
   end

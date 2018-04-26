@@ -23,13 +23,7 @@ class Song
     self.all.detect{|a| a.name == name}
   end
 
-  def self.reset_all
-    self.all.clear
-  end
 
-  def self.count
-    self.all.count
-  end
 ##
   def to_param
     name.downcase.gsub(' ', '-')
